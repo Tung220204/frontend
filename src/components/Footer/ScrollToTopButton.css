@@ -1,0 +1,8 @@
+.footer-actions {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.footer-actions svg:hover {
+  opacity: 0.8;
+}

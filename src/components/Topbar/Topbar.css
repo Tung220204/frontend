@@ -1,0 +1,59 @@
+.topbar {
+  background: linear-gradient(
+    90deg,
+    #005bea 0%,
+    #00c6fb 30%,
+    #4fd1ff 50%,
+    #00c6fb 70%,
+    #005bea 100%
+  );
+  color: #fff;
+  font-size: 14px;
+  padding: 0;
+  width: 100%;
+  min-height: 32px;
+  border-top: 2px solid #fff;
+  border-bottom: 2px solid #fff;
+}
+.topbar-container {
+  margin: 0 auto;
+  padding: 0 16px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 32px;
+}
+
+/* Responsive cho tablet và mobile */
+@media (max-width: 900px) {
+  .topbar-container {
+    flex-direction: column;
+    align-items: flex-start;
+    height: auto;
+    gap: 4px;
+    padding: 4px 8px;
+  }
+  .topbar {
+    font-size: 13px;
+    min-height: 40px;
+  }
+}
+
+@media (max-width: 600px) {
+  .topbar-container {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 2px;
+    padding: 2px 4px;
+  }
+  .topbar {
+    font-size: 12px;
+    min-height: 48px;
+  }
+  .topbar-hotline {
+    margin-right: 4px;
+  }
+  .topbar-link {
+    margin-left: 2px;
+  }
+}

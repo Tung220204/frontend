@@ -1,0 +1,70 @@
+
+@media (max-width: 767px) {
+  .filter-sidebar {
+    display: flex;
+    flex-direction: row;
+    gap: 12px;
+    overflow-x: auto;
+    padding-bottom: 8px;
+  }
+  .filter-group {
+    min-width: 150px;
+    flex: 0 0 auto;
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: 0 1px 4px rgba(0,0,0,0.04);
+    padding: 8px 10px 8px 10px;
+    margin-bottom: 0;
+  }
+  .filter-group .fw-semibold {
+    font-size: 15px;
+    margin-bottom: 6px;
+  }
+  .filter-group .form-check {
+    margin-bottom: 4px;
+  }
+}
+.product-card-list:hover {
+  transform: scale(1.05);
+}
+.btn-buy-now {
+  background: #def7ff !important;
+  color: #0028ef !important;
+  font-weight: 600;
+  font-size: 15px;
+  border-radius: 12px;
+  width: 100%;
+  padding: 12px 0;
+  margin-top: 10px;
+  margin-bottom: 0;
+  transition: background-color 0.2s, color 0.2s;
+}
+.btn-buy-now:hover {
+  background: #50b9ff !important;
+}
+/* CSS cuar sắp xếp theo */
+.product-sortbar-btn {
+  color: #000000;
+  background: none;
+    border: none;
+  padding: 5px 10px;
+  margin: 0 5px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.product-sortbar-btn.active {
+  position: relative;
+  background-color: white;
+  border: 1px solid #1976d2;
+  color: #1976d2;
+}
+/* phần cuối */
+.policy {
+  padding-top: 20px;
+  padding-bottom: 15px;
+}
+.customer-policy {
+  width: 305px;
+  height: 101px;
+}
