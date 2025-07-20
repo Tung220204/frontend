@@ -1,14 +1,7 @@
-import React, { useEffect, useState, useRef } from "react";
+import React, { useEffect, useState } from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import "./Body.css";
 import { useCart } from "../Context/CartContext";
-import {
-  faBox,
-  faHeadphones,
-  faMoneyBillWave,
-  faTruck,
-} from "@fortawesome/free-solid-svg-icons";
 
 const initialFilters = [
   {

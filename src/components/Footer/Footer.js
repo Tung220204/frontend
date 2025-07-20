@@ -1,6 +1,5 @@
 import React from "react";
 import "./Footer.css";
-import { useTranslation } from "react-i18next";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faArrowRight } from "@fortawesome/free-solid-svg-icons";
 import confirm from "../../assets/images/Img/bocongthuong.png";
@@ -70,13 +69,13 @@ function Footer() {
               <h4>Sitemap</h4>
               <ul>
                 <li>
-                  <a href="#">Article</a>
+                  <button>Article</button>
                 </li>
                 <li>
-                  <a href="#">Cart</a>
+                  <button>Cart</button>
                 </li>
                 <li>
-                  <a href="#">Contact</a>
+                  <button>Contact</button>
                 </li>
               </ul>
             </div>
@@ -84,24 +83,24 @@ function Footer() {
               <h4>Legal</h4>
               <ul>
                 <li>
-                  <a href="#">
+                  <button>
                     <strong>_ Privacy Policy</strong>
-                  </a>
+                  </button>
                 </li>
                 <li>
-                  <a href="#">Cookie policy</a>
+                  <button>Cookie policy</button>
                 </li>
                 <li>
-                  <a href="#">Delivery policy</a>
+                  <button>Delivery policy</button>
                 </li>
                 <li>
-                  <a href="#">FAQs</a>
+                  <button>FAQs</button>
                 </li>
               </ul>
             </div>
             <div className="footer-column">
               <h4>Download App</h4>
-              <a href="#" className="app-store">
+              <button className="app-store">
                 <svg
                   width="230"
                   height="65"
@@ -141,8 +140,8 @@ function Footer() {
                     </clipPath>
                   </defs>
                 </svg>
-              </a>
-              <a href="#" className="app-store">
+              </button>
+              <button>
                 <svg
                   width="230"
                   height="65"
@@ -174,7 +173,7 @@ function Footer() {
                     fill="white"
                   />
                 </svg>
-              </a>
+              </button>
               <button className="d-flex align-items-center ms-auto btn-language">
                 <svg
                   width="36"

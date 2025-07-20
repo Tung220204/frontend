@@ -18,7 +18,7 @@ function Topbar() {
             Hotline: <b className="text-react-yellow">0828 750 787</b>
           </span>
           <FontAwesomeIcon icon={faMobileAlt} style={{ marginLeft: 16, marginRight: 8 }} />
-          <a href="#" className="topbar-link">Tải ứng dụng</a>
+          <button type="button" className="topbar-link">Tải ứng dụng</button>
         </div>
       </div>
     </div>

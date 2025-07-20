@@ -76,7 +76,7 @@ export default function DropdownCategory() {
         <div className="dropdown-category-bestseller">
           <div className="dropdown-category-bestseller-title">
             <strong style={{ color: "#000000" }}>Sản Phẩm Bán Chạy</strong>{" "}
-            <a href="#">Xem tất cả &gt;</a>
+            <button type="button">Xem tất cả &gt;</button>
           </div>
           <div className="dropdown-category-bestseller-list">
             {bestSellers.map((item, idx) => (

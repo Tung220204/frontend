@@ -12,12 +12,27 @@ import "./Header.css";
 import logo from "../../assets/images/logo/logo.jpg";
 import Lang from "../../assets/images/icon/vn.jpg";
 import DropdownCategory from "./Dropdown/DropdownCategory";
+import DropdownCart from "./Dropdown/DropdownCart";
 import { useCart } from "../Context/CartContext";
 
 function Header() {
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
+  const [showCart, setShowCart] = useState(false);
+  const [cartPosition, setCartPosition] = useState({ top: 0, left: 0 });
   const { cart } = useCart();
   const totalQuantity = cart.reduce((sum, item) => sum + item.quantity, 0);
+  const cartRef = React.useRef();
+  const hideTimeout = React.useRef();
+
+  const handleCartMouseEnter = (e) => {
+    if (hideTimeout.current) clearTimeout(hideTimeout.current);
+    const rect = cartRef.current.getBoundingClientRect();
+    setCartPosition({ top: rect.bottom + window.scrollY, left: rect.right - 340 });
+    setShowCart(true);
+  };
+  const handleCartMouseLeave = () => {
+    hideTimeout.current = setTimeout(() => setShowCart(false), 300);
+  };
 
   return (
     <header className="header">
@@ -28,7 +43,10 @@ function Header() {
             onClick={() => setIsDropdownOpen(false)}
           />
         )}
-        <div className="header-top container" style={{ position: "relative", zIndex: 11 }}>
+        <div
+          className="header-top container"
+          style={{ position: "relative", zIndex: 11 }}
+        >
           <img src={logo} alt="Logo" className="header-logo" />
           <div className="header-search">
             <input type="text" placeholder="Tìm sản phẩm" />
@@ -46,12 +64,19 @@ function Header() {
                 VI
               </span>
             </span>
-            <span className="header-cart">
+            <span
+              className="header-cart"
+              ref={cartRef}
+              onMouseEnter={handleCartMouseEnter}
+              onMouseLeave={handleCartMouseLeave}
+              style={{ position: "relative" }}
+            >
               <FontAwesomeIcon
                 icon={faBagShopping}
                 style={{ fontSize: "24px", color: "#0154C5" }}
               />
               <span className="header-cart-badge">{totalQuantity}</span> Giỏ hàng
+              {showCart && <DropdownCart cartPosition={cartPosition} />}
             </span>
             <span className="header-account">
               <FontAwesomeIcon
@@ -84,11 +109,22 @@ function Header() {
               </div>
             )}
           </div>
-          <a href="#" style={{ position: "relative", zIndex: 11 }}>Về Chúng Tôi</a>
-          <a href="#" style={{ position: "relative", zIndex: 11 }}>Bài Viết</a>
-          <a href="#" style={{ position: "relative", zIndex: 11 }}>Catalog</a>
-          <a href="#" style={{ position: "relative", zIndex: 11 }}>Liên Hệ</a>
-          <span className="header-nav-info" style={{ marginLeft: "65px", position: "relative", zIndex: 11}}>
+          <button type="button" style={{ position: "relative", zIndex: 11 }}>
+            Về Chúng Tôi
+          </button>
+          <button type="button" style={{ position: "relative", zIndex: 11 }}>
+            Bài Viết
+          </button>
+          <button type="button" style={{ position: "relative", zIndex: 11 }}>
+            Catalog
+          </button>
+          <button type="button" style={{ position: "relative", zIndex: 11 }}>
+            Liên Hệ
+          </button>
+          <span
+            className="header-nav-info"
+            style={{ marginLeft: "65px", position: "relative", zIndex: 11 }}
+          >
             <svg
               width="20"
               height="20"
@@ -109,7 +145,10 @@ function Header() {
             </svg>
             <span className="text-black">Hỗ trợ 24/7</span>
           </span>
-          <span className="header-nav-info" style={{ position: "relative", zIndex: 11 }}>
+          <span
+            className="header-nav-info"
+            style={{ position: "relative", zIndex: 11 }}
+          >
             <svg
               width="24"
               height="24"
@@ -146,7 +185,10 @@ function Header() {
             </svg>
             <span className="text-black">Miễn Phí Vận Chuyển</span>
           </span>
-          <span className="header-nav-info" style={{ position: "relative", zIndex: 11 }}>
+          <span
+            className="header-nav-info"
+            style={{ position: "relative", zIndex: 11 }}
+          >
             <svg
               width="20"
               height="16"
@@ -163,7 +205,10 @@ function Header() {
             </svg>
             <span className="text-black"> Giao Hàng Nhanh 2h</span>
           </span>
-          <span className="header-nav-info" style={{ position: "relative", zIndex: 11 }}>
+          <span
+            className="header-nav-info"
+            style={{ position: "relative", zIndex: 11 }}
+          >
             <svg
               width="24"
               height="24"

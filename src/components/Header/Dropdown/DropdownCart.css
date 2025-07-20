@@ -1,0 +1,99 @@
+.dropdown-cart {
+    position: absolute;
+    /* top: 120%; */
+    right: 0;
+    width: 340px;
+    margin-top: 20px;
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: 0 4px 24px 0 rgba(0,0,0,0.12);
+    padding: 16px 0 8px 0;
+    z-index: 99999 !important;  /* Đảm bảo nổi lên trên mọi thành phần khác */
+    font-family: inherit;
+  }
+  
+  .dropdown-cart-title {
+    font-weight: bold;
+    font-size: 18px;
+    padding: 0 20px 8px 20px;
+    border-bottom: 1px solid #eee;
+    margin-bottom: 8px;
+  }
+  
+  .cart-item {
+    display: flex;
+    align-items: center;
+    padding: 8px 20px;
+    border-bottom: 1px solid #f3f3f3;
+  }
+  
+  .cart-item:last-child {
+    border-bottom: none;
+  }
+  
+  .cart-item img {
+    width: 48px;
+    height: 48px;
+    object-fit: cover;
+    border-radius: 8px;
+    margin-right: 12px;
+  }
+  
+  .cart-item-info {
+    flex: 1;
+    min-width: 0;
+  }
+  
+  .cart-item-name {
+    font-size: 15px;
+    font-weight: 500;
+    color: #222;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+  
+  .cart-item-price {
+    color: #0154C5;
+    font-weight: bold;
+    font-size: 15px;
+    margin-top: 2px;
+  }
+  
+  .cart-item-qty {
+    color: #888;
+    font-size: 13px;
+    margin-left: 8px;
+  }
+  
+  .cart-item-remove {
+    background: none;
+    border: none;
+    color: #888;
+    cursor: pointer;
+    font-size: 18px;
+    margin-left: 8px;
+  }
+  
+  .dropdown-cart-footer {
+    padding: 8px 20px 0 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .dropdown-cart-view-btn {
+    background: #0154C5;
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    padding: 8px 20px;
+    font-weight: bold;
+    cursor: pointer;
+    margin-left: 8px;
+    transition: background 0.2s;
+  }
+  
+  .dropdown-cart-view-btn:hover {
+    background: #013a8c;
+  }
